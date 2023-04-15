@@ -1,6 +1,8 @@
 spring:
+  main:
+    banner-mode: off
   datasource:
-    url: jdbc:mysql://192.168.255.128:3306/atguigudb
+    url: jdbc:mysql://192.168.255.128:3306/mybatis
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -15,3 +17,4 @@ logging:
     '[org.springframework.web]': error
     '[com.example.demo.demo.mapper]': trace
     '[com.example.demo.demo.controller]': info  
+
