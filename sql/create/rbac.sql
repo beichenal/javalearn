@@ -1,4 +1,4 @@
-create database if not exists mybatis default character set utf8 collate utf8_gengeral_ci;
+create database if not exists mybatis default character set utf8 collate utf8_general_ci;
 
 use mybatis;
 
@@ -27,7 +27,7 @@ CREATE TABLE if not exists sys_role
 );
 ALTER TABLE sys_role COMMENT '角色表';
 
-CREATE TABLE id not exists sys_privilege
+CREATE TABLE if not exists sys_privilege
 (
   id BIGINT NOT NULL AUTO_INCREMENT COMMENT '权限ID',
   privilege_name VARCHAR(50) COMMENT '权限名称',
