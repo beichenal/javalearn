@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.demo.entity.SysRole;
 import com.example.demo.demo.entity.SysUser;
 import com.example.demo.demo.mapper.SysUserMapper;
 
@@ -20,5 +22,10 @@ public class SysUserController {
   @GetMapping("/users")
   public List<SysUser> getAllUser() {
     return sysUserMapper.selectAll();
+  }
+
+  @GetMapping("/roles")
+  public List<SysRole> selectRolesByUserId(@RequestParam("id") Long id) {
+    return sysUserMapper.selectRolesByUserId(id);
   }
 }
