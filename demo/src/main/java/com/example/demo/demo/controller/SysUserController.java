@@ -1,5 +1,6 @@
 package com.example.demo.demo.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,17 @@ public class SysUserController {
   @GetMapping("/roles")
   public List<SysRole> selectRolesByUserId(@RequestParam("id") Long id) {
     return sysUserMapper.selectRolesByUserId(id);
+  }
+
+  @GetMapping("/addUser")
+  public int insertUser(){
+    SysUser user = new SysUser();
+    user.setUserName("test1");
+    user.setUserPassword("123456");
+    user.setUserEmail("test@mybatis.tk");
+    user.setUserInfo("test info");
+    user.setHeadImg(new byte[]{1,2,3});
+    user.setCreateTime(new Date());
+    return sysUserMapper.insert(user);
   }
 }
